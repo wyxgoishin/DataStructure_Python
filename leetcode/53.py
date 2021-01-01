@@ -5,9 +5,15 @@
 注意：
     1 <= arr.length <= 10^5
     -100 <= arr[i] <= 100
+题解：
+    1、动态规划法
+    定义dp数组第i个元素的值为输入数组前i个数构成的数组的和与第i个数的最大值
+    则dp[i+1] = max(dp[i] + nums[i], nums[i])
+    要求的最大子数组和即为max(dp)
 """
 def maxSubArray(nums):
-    dp = [0] * len(nums)
+    dp = [0] * (len(nums) + 1)
+    dp[0] = nums[0]
     maxSum = nums[0]
     for i in range(1, len(nums)):
         dp[i] = max(dp[i-1] + nums[i], nums[i])
@@ -15,5 +21,5 @@ def maxSubArray(nums):
     return maxSum
 
 
-nums = [20, -20, -100, 19]
+nums = [1, 2]
 print(maxSubArray(nums))
