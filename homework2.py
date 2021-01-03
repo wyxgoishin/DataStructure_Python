@@ -30,12 +30,12 @@ def savepoint(x, a, h):
 
 def real_y(x):
     # return math.exp(-50 * x) + (math.exp(-x) + x) / 50
-    return math.exp(-300 * x) + 2 * math.exp(-x / 5)
+    return (3 * math.exp(-300 * x) + 2995 * math.exp(-x / 5)) / 1499 - 1
 
 
 # h1, h2, x0, y0 = 1e-2, 1e-1, 0, 51 / 50 
 # a, x, y = 0.4605, x0, y0
-h1, h2, x0, y0 = 1e-3, 1e-1, 0, 3
+h1, h2, x0, y0 = 1e-3, 1e-1, 0, 2
 a, x, y = 0.07575, x0, y0
 result = [[], [], []]
 while x <= 3:
